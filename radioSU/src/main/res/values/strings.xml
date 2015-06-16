@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="app_name">Rádio S.U.</string>
+    <string name="email">E-mail</string>
+	<string name="senha">Senha</string>
+	<string name="conectar">Conectar</string>
+	<string name="confacebook"></string>
+	<string name="cadastro">Cadastre-se</string>
+	<string name="esqsenha">Esqueceu a senha?</string>
+	<string name="erro_autenticacao">Usuário ou senha incorreta</string>
+	<string name="str_play">Play</string>
+    <string name="str_pause">Pause</string>
+    <string name="str_stop">Stop</string>
+    <string name="artista">Artista</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="cidade">Cidade</string>
+    <string name="musica">Musica</string>
+    <string name="recado">Recado</string>
+    <string name="com.facebook.sdk.Applicationld">@string/facebook_app_id</string>
+     <string name="app_id">1397912290524911</string>
+
+    
+
+</resources>

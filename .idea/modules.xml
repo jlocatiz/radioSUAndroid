@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RadioSU.iml" filepath="$PROJECT_DIR$/RadioSU.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebookSDK/facebookSDK.iml" filepath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/radioSU/radioSU.iml" filepath="$PROJECT_DIR$/radioSU/radioSU.iml" />
+    </modules>
+  </component>
+</project>
+

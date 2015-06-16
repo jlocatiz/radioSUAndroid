@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    xmlns:materialdesign="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:background="#ffee1720"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:id="@+id/imageView_background"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imgPlayingMusic"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/logo_menu"
+                    android:layout_gravity="center_horizontal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/headerTextView"
+                    android:id="@+id/textView_musica"
+                    android:layout_marginTop="4dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/headerTextView"
+                    android:id="@+id/textView_artista"
+                    android:layout_marginTop="4dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/headerTextView"
+                    android:id="@+id/textView_warCry"
+                    />
+
+            </LinearLayout>
+        </FrameLayout>
+
+
+
+
+
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        wheel:matProg_barColor="#ffee1720"
+        wheel:matProg_progressIndeterminate="true" />
+
+
+
+
+
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="24dp"
+            android:background="#1E88E5"
+            materialdesign:animate="true"
+            materialdesign:iconDrawable="@drawable/play" />
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="24dp"
+            android:background="#1E88E5"
+            materialdesign:animate="true"
+            materialdesign:iconDrawable="@drawable/stop"
+            />
+
+
+</LinearLayout>

@@ -1,0 +1,126 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From FacebookSDK:
+* build.gradle
+* build.xml
+* facebook.iml
+From RadioSU:
+* .gitattributes
+* .gitignore
+* .idea\
+* .idea\.name
+* .idea\RadioSU.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* RadioSU\
+* RadioSU\.git\
+* RadioSU\.git\COMMIT_EDITMSG
+* RadioSU\.git\HEAD
+* RadioSU\.git\config
+* RadioSU\.git\description
+* RadioSU\.git\hooks\
+* RadioSU\.git\hooks\README.sample
+* RadioSU\.git\hooks\applypatch-msg.sample
+* RadioSU\.git\hooks\commit-msg.sample
+* RadioSU\.git\hooks\post-update.sample
+* RadioSU\.git\hooks\pre-applypatch.sample
+* RadioSU\.git\hooks\pre-commit.sample
+* RadioSU\.git\hooks\pre-push.sample
+* RadioSU\.git\hooks\pre-rebase.sample
+* RadioSU\.git\hooks\prepare-commit-msg.sample
+* RadioSU\.git\hooks\update.sample
+* RadioSU\.git\index
+* RadioSU\.git\info\
+* RadioSU\.git\info\exclude
+* RadioSU\.git\logs\
+* RadioSU\.git\logs\HEAD
+* RadioSU\.git\logs\refs\
+* RadioSU\.git\logs\refs\heads\
+* RadioSU\.git\logs\refs\heads\master
+* RadioSU\.git\objects\
+* RadioSU\.git\objects\19\
+* RadioSU\.git\objects\19\ce9d8ff1fccf510df82d99a65f48c649b7becd
+* RadioSU\.git\objects\1e\
+* RadioSU\.git\objects\1e\f5ebd400476c013530d4c545be32e99ea0a98f
+* RadioSU\.git\objects\96\
+* RadioSU\.git\objects\96\374c4e7f13264096db3a2c31c27963ee5a6f2d
+* RadioSU\.git\objects\bd\
+* RadioSU\.git\objects\bd\b0cabc87cf50106df6e15097dff816c8c3eb34
+* RadioSU\.git\refs\
+* RadioSU\.git\refs\heads\
+* RadioSU\.git\refs\heads\master
+* RadioSU\.gitattributes
+* RadioSU\.gitignore
+* ic_entrar-web.png
+* ic_launcher-web.png
+* ic_logo2-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In FacebookSDK:
+* AndroidManifest.xml => facebookSDK\src\main\AndroidManifest.xml
+* assets\ => facebookSDK\src\main\assets\
+* libs\bolts-android-1.1.2.jar => facebookSDK\libs\bolts-android-1.1.2.jar
+* res\ => facebookSDK\src\main\res\
+* src\ => facebookSDK\src\main\java\
+In RadioSU:
+* AndroidManifest.xml => radioSU\src\main\AndroidManifest.xml
+* assets\ => radioSU\src\main\assets\
+* libs\bolts-android-1.1.2.jar => radioSU\libs\bolts-android-1.1.2.jar
+* res\ => radioSU\src\main\res\
+* src\ => radioSU\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

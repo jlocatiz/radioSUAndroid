@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="466dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/emailped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/email"
+        android:textColor="#D3D3D3"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailped"
+        android:layout_alignRight="@+id/emailped"
+        android:layout_alignTop="@+id/emailped"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="@string/senha"
+        android:textColor="#D3D3D3"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <Button
+        android:id="@+id/conectar"
+        style="@style/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/senha"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:layout_below="@+id/senha"
+        android:layout_marginTop="14dp"
+        android:background="#ee1c25"
+        android:text="@string/conectar"
+        android:textColor="#fff"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_alignRight="@+id/senha"
+        android:layout_alignTop="@+id/conectar"
+        android:background="#FFFFFF"
+        android:onClick="cadastroOnClick"
+        android:text="@string/cadastro"
+        android:textColor="#ffee1c25"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/esqsenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/conectar"
+        android:layout_alignRight="@+id/senha"
+        android:text="@string/esqsenha"
+        android:textColor="#ffee1720"
+        android:textSize="12sp" />
+
+    <com.facebook.widget.LoginButton
+        android:id="@+id/authButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/senha"
+        android:layout_alignRight="@+id/cadastro"
+        android:layout_below="@+id/conectar"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

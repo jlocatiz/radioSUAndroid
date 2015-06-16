@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_gravity="center"
+	    
+	    android:orientation="vertical" >
+
+		<RelativeLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentTop="true"
+		    android:orientation="vertical" >
+
+		    <LinearLayout
+		        android:id="@+id/linearLayout1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentRight="true"
+		        android:gravity="center_vertical|center_horizontal|center" >
+
+		        <TextView
+		            android:id="@+id/facebook"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dp"
+		            android:clickable="true"
+		            android:drawableTop="@drawable/ic_facebook"
+		            android:onClick="selecionarOpcao" />
+
+		        <TextView
+		            android:id="@+id/twitter"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dp"
+		            android:clickable="true"
+		            android:drawableTop="@drawable/ic_twitter"
+		            android:onClick="selecionarOpcao" />
+
+		        <TextView
+		            android:id="@+id/instagram"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dp"
+		            android:clickable="true"
+		            android:drawableTop="@drawable/ic_instagram" 
+		            android:onClick="selecionarOpcao"/>
+		    </LinearLayout>
+
+		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/linearLayout1"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentRight="true"
+		        android:layout_alignParentTop="true"
+		        android:orientation="vertical" >
+
+		        <ImageView
+		            android:id="@+id/logo_menu"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:src="@drawable/logo_menu" />
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_centerHorizontal="true"
+		        android:gravity="center"
+		        android:background="#ee1c25"
+		        android:orientation="vertical" >
+
+		        <ImageButton
+		            android:id="@+id/menu_ouvir"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:background="#ee1c25"
+		            android:src="@drawable/menu_ouvir"
+		            android:onClick="selecionarOpcao" />
+
+		        <ImageButton
+		            android:id="@+id/menu_novidades"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:background="#ee1c25"
+		            android:src="@drawable/menu_novidades"
+		            android:onClick="selecionarOpcao" />
+
+		        <ImageButton
+		            android:id="@+id/menu_pedidos"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:background="#ee1c25"
+		            android:onClick="selecionarOpcao"
+		            android:src="@drawable/menu_pedidos" />
+
+		        
+		   		 </LinearLayout>
+
+</LinearLayout>
+
+		</RelativeLayout>
+
+</RelativeLayout>

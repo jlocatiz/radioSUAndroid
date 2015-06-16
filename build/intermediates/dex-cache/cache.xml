@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\RadioSU\facebookSDK\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="aecba0333f9c65270036f855e35645daa6b21027">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\classes-b26d29b4ed67fe69b298ae247756c91cf018debf.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\classes-6a0ee6979ba83dc831dce52a0308cccd20e72b8f.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.5\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="12b228574de7977e56e41cbfb385b1463bbdb41a">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\classes-9bbe91ec20447e744a74cc7cd0fa71e44aa313ca.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-961b0e9bb85a6bea40bdaea450e640fce5f3bda2.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\RadioSU\facebookSDK\unspecified\libs\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-0015180eeba19ae04c06b7e8841e8f3b95313271.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-f5f07a94897899cd85ecb528c57fe4e2604595f2.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\library-2.4.0-407190f8ed5a9cfb6dabf3db409f18aebe9718ca.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\gson-2.3.1-82c729154014d9ce7b1bf0b2626fb267bb8733ef.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\classes-fb9f86ed1e59f5d3fed372a346cdfa8c17f532d6.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.9.0\a681c044244d9fc375198588297a39ba78028423\retrofit-1.9.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\retrofit-1.9.0-f54993a711d3a7a28b04e40b2656d3830f567913.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.5\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="75c54c470e19b251749e6e6c2cf3d73c0b50aa64">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\classes-c83e378e0e987ae3fcd8a2cd8a12b4c7f3568489.jar" />
+    </item>
+    <item
+        jar="C:\Users\administrador\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.4\dd9eeb557650c4ad7394df23f0f5cf27a7cfc697\universal-image-loader-1.9.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="C:\Users\administrador\AndroidStudioProjects\RadioSU\radioSU\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-a10060f9d88f8ba61b7da4cf616e12aac8c07061.jar" />
+    </item>
+
+</items>
