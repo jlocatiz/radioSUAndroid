@@ -61,46 +61,68 @@
         </FrameLayout>
 
 
-
-
-
-
-    <com.pnikosis.materialishprogress.ProgressWheel
-        android:id="@+id/progress_wheel"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        wheel:matProg_barColor="#ffee1720"
-        wheel:matProg_progressIndeterminate="true" />
+        android:layout_height="wrap_content"
+        android:background="#ffececec"
+        android:padding="10dp">
 
-
-
-
-
-
-        <com.gc.materialdesign.views.ButtonFloat
+        <Button
             android:id="@+id/play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="24dp"
-            android:background="#1E88E5"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/play" />
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/play"/>
 
-        <com.gc.materialdesign.views.ButtonFloat
+        <Button
             android:id="@+id/stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="24dp"
-            android:background="#1E88E5"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/stop"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:background="@drawable/stop"
             />
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            wheel:matProg_barColor="#ffee1720"
+            android:visibility="gone"
+            wheel:matProg_progressIndeterminate="true" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+
+        <Button
+            android:id="@+id/button_pedir"
+            android:layout_width="match_parent"
+            style="@style/ButtonRSU"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/menu_pedidos" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
 
 
 </LinearLayout>

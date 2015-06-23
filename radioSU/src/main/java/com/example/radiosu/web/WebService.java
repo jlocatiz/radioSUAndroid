@@ -1,7 +1,14 @@
 package com.example.radiosu.web;
 
+import org.json.JSONObject;
+
+import model.Pedido;
+import model.ReqLogin;
+import model.ReqMusicas;
 import model.Result;
+import model.Usuario;
 import retrofit.Callback;
+import retrofit.http.Body;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.POST;
@@ -11,12 +18,22 @@ import retrofit.http.POST;
  */
 public interface WebService {
 
-    @FormUrlEncoded
     @POST("/Servico/Usuario/UsuarioService.svc/Entrar")
-    void login(@Field("usuario") String usuario,@Field("senha") String senha, Callback<Result> callback);
-
+    void login(@Body ReqLogin req, Callback<Result> callback);
 
     @POST("/Servico/Player/PlayerService.svc/MusicaTocando")
     void musicaTocando(Callback<Result> callback);
+
+    @POST("/Servico/Pedido/PedidoService.svc/PreencheArtistaMusica")
+    void getArtistas(@Body JSONObject req, Callback<Result> callback);
+
+    @POST("/Servico/Pedido/PedidoService.svc/PreencheArtistaMusica")
+    void getMusicas(@Body ReqMusicas req, Callback<Result> callback);
+
+    @POST("/Servico/Pedido/PedidoService.svc/Inserir")
+    void pedirMusica(@Body Pedido req, Callback<Result> callback);
+
+    @POST("/Servico/Usuario/UsuarioService.svc/Inserir")
+    void cadastrarUsuario(@Body Usuario req, Callback<Result> callback);
 
 }
