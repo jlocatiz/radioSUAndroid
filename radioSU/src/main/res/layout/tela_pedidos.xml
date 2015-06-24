@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,31 +13,19 @@
         android:background="#FFFFFF" >
 
         <TextView
-            android:id="@+id/nomeped"
+            android:id="@+id/textView_cidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nome"/>
+            android:visibility="gone"
+            android:text="@string/cidade"/>
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/editText_cidade"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10">
-  			
-            <requestFocus />
-        </EditText>
-
-        <TextView
-            android:id="@+id/emailped"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"/>
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:ems="10" />
+
 
         <TextView
             android:id="@+id/telefoneped"
@@ -44,19 +34,7 @@
             android:text="@string/telefone"/>
 
         <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10" />
-
-        <TextView
-            android:id="@+id/cidadeped"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cidade"/>
-
-        <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText_telefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" />
@@ -67,8 +45,8 @@
             android:layout_height="wrap_content"
             android:text="@string/artista"/>
 
-        <EditText
-            android:id="@+id/editText5"
+        <Spinner
+            android:id="@+id/spinner_artistas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" />
@@ -79,8 +57,8 @@
             android:layout_height="wrap_content"
             android:text="@string/musica"/>
 
-        <EditText
-            android:id="@+id/editText6"
+        <Spinner
+            android:id="@+id/spinner_musicas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" />
@@ -92,10 +70,22 @@
             android:text="@string/recado"/>
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/editText_recado"
             android:layout_width="match_parent"
-            android:layout_height="122dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
             android:ems="10" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_pedir"
+            android:text="@string/pedir_musica"
+            style="@style/ButtonRSU"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 
-</LinearLayout>
+
+
+</ScrollView>

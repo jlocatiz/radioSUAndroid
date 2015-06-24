@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -41,8 +42,9 @@ import retrofit.client.Response;
 public class Ouvir extends Activity {
 
 	static MediaPlayer mPlayer;
-    ButtonFloat buttonPlay;
-    ButtonFloat buttonStop;
+    Button buttonPlay;
+    Button buttonStop;
+    Button btnPedir;
     ProgressWheel pb;
     Bitmap bitmap, bitmapBlur;
 
@@ -57,9 +59,16 @@ public class Ouvir extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tela_ouvir);
 		pb = (ProgressWheel)findViewById(R.id.progress_wheel);
-		buttonPlay = (ButtonFloat) findViewById(R.id.play);
+		buttonPlay = (Button) findViewById(R.id.play);
         imageBack = (ImageView)findViewById(R.id.imageView_background);
         tvMusica = (TextView) findViewById(R.id.textView_musica);
+        btnPedir = (Button) findViewById(R.id.button_pedir);
+        btnPedir.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Ouvir.this, Pedidos.class));
+            }
+        });
         tvArtista = (TextView) findViewById(R.id.textView_artista);
         imagem = (ImageView)findViewById(R.id.imgPlayingMusic);
         rodando = false;
@@ -72,8 +81,9 @@ public class Ouvir extends Activity {
                 final Handler handler = new Handler(){
                     @Override
                     public void handleMessage(Message msg) {
-                        pb.setVisibility(View.INVISIBLE);
-                        buttonPlay.setVisibility(View.INVISIBLE);
+                        pb.setVisibility(View.GONE);
+                        buttonPlay.setVisibility(View.GONE);
+                        buttonStop.setVisibility(View.VISIBLE);
                     }
                 };
 
@@ -150,8 +160,12 @@ public class Ouvir extends Activity {
                                             Thread thread = new Thread(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                  bitmapBlur = fastblur(bitmap,30);
-                                                  handlerBlur.sendEmptyMessage(1);
+                                                    try {
+                                                        bitmapBlur = fastblur(bitmap,30);
+                                                        handlerBlur.sendEmptyMessage(1);
+                                                    }catch (Exception e){
+                                                    }
+
                                                 }
                                             });
                                             thread.start();
@@ -192,12 +206,13 @@ public class Ouvir extends Activity {
 			}
 		});
 		
-		buttonStop = (ButtonFloat) findViewById(R.id.stop);
+		buttonStop = (Button) findViewById(R.id.stop);
 		buttonStop.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-               pb.setVisibility(View.INVISIBLE);
+               pb.setVisibility(View.GONE);
                 buttonPlay.setVisibility(View.VISIBLE);
+                buttonStop.setVisibility(View.GONE);
                 rodando = false;
                 if (threadImagem != null && threadImagem.isAlive())
                     threadImagem.interrupt();

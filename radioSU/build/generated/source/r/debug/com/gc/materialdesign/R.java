@@ -53,9 +53,9 @@ public final class R {
 		public static final int float_button_shadow1 = 0x7f020076;
 		public static final int ic_launcher = 0x7f02007d;
 		public static final int ic_reloj_max = 0x7f020080;
-		public static final int shadow_down = 0x7f020088;
-		public static final int shadow_right = 0x7f020089;
-		public static final int sprite_check = 0x7f02008a;
+		public static final int shadow_down = 0x7f02008b;
+		public static final int shadow_right = 0x7f02008c;
+		public static final int sprite_check = 0x7f02008f;
 	}
 	public static final class id {
 		public static final int blue = 0x7f08004f;
@@ -72,7 +72,7 @@ public final class R {
 		public static final int progressBarCircularIndetermininate = 0x7f080071;
 		public static final int red = 0x7f08004d;
 		public static final int rootSelector = 0x7f08004a;
-		public static final int shape_bacground = 0x7f08009b;
+		public static final int shape_bacground = 0x7f0800a8;
 		public static final int snackbar = 0x7f080072;
 		public static final int text = 0x7f080074;
 		public static final int title = 0x7f080032;

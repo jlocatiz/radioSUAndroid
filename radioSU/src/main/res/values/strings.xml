@@ -17,9 +17,15 @@
     <string name="cidade">Cidade</string>
     <string name="musica">Musica</string>
     <string name="recado">Recado</string>
-    <string name="com.facebook.sdk.Applicationld">@string/facebook_app_id</string>
-     <string name="app_id">1397912290524911</string>
+    <string name="com.facebook.sdk.Applicationld">800418770027994</string>
+    <string name="app_id">800418770027994</string>
+    <string name="pedir">Pedir Musica</string>
+    <string name="pedir_musica">Pedir Musica</string>
+    <string name="estado">estado</string>
+    <string name="confirmar_senha">Confirmação de senha</string>
+    <string name="sexo">Sexo</string>
+    <string name="nascimento">Nascimento</string>
+    <string name="cadastrar_se">Cadastrar-se</string>
 
-    
 
 </resources>
