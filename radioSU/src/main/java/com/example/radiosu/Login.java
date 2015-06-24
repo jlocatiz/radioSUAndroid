@@ -94,16 +94,20 @@ public class Login extends Activity {
                 service.login(reqLogin,new Callback<Result>() {
                     @Override
                     public void success(Result result, retrofit.client.Response response) {
-                        String[] aux = result.d.split(",");
-                        Usuario usuario = new Usuario();
-                        usuario.setId(Integer.parseInt(aux[0]));
-                        usuario.setNome(aux[1]);
-                        usuario.setEmail(aux[2]);
-                        usuario.setCidade(aux[3]);
-                        Usuario.current = usuario;
-                        Intent intent = new Intent(Login.this, com.example.radiosu.Menu.class);
-                        startActivity(intent);
-                        finish();
+                        if (result.d.equals("")){
+                            Toast.makeText(Login.this,"Usuário e/ou Senha inválidos",Toast.LENGTH_LONG).show();
+                        }else {
+                            String[] aux = result.d.split(",");
+                            Usuario usuario = new Usuario();
+                            usuario.setId(Integer.parseInt(aux[0]));
+                            usuario.setNome(aux[1]);
+                            usuario.setEmail(aux[2]);
+                            usuario.setCidade(aux[3]);
+                            Usuario.current = usuario;
+                            Intent intent = new Intent(Login.this, com.example.radiosu.Menu.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
 
                     @Override
