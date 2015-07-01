@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/guilherme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-fbcd7150c11b02ddfa64ce92b3c37afcd1565a4e.jar" />
-    </item>
-    <item
         jar="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/exploded-aar/com.github.navasmdc/MaterialDesign/1.5/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -51,11 +44,25 @@
         <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/classes-50fdd93eb42dc0a2550ee6e954433ec852a3f112.jar" />
     </item>
     <item
-        jar="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/exploded-aar/radioSUAndroid/facebookSDK/unspecified/libs/bolts-android-1.1.2.jar"
+        jar="/Users/guilherme/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.4/dd9eeb557650c4ad7394df23f0f5cf27a7cfc697/universal-image-loader-1.9.4.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
-        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/release/bolts-android-1.1.2-e4a8a76a635033dc6cb447e799f3617a4f54f5b1.jar" />
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-bcb28ac451eb636f784cbec44e3a91937ea9f3ab.jar" />
+    </item>
+    <item
+        jar="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/exploded-aar/radioSUAndroid/facebookSDK/unspecified/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b741d389003d78467095e56e4154a3e2b9d5d2fc">
+        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/classes-2e83c5a1028397a2a8c1d51ef2e40f20ac241362.jar" />
+    </item>
+    <item
+        jar="/Users/guilherme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-fbcd7150c11b02ddfa64ce92b3c37afcd1565a4e.jar" />
     </item>
     <item
         jar="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
@@ -63,13 +70,6 @@
         revision="22.0.1"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
         <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/classes-5ed3e41549943f84e292bcc985f3aa853ecbf2b9.jar" />
-    </item>
-    <item
-        jar="/Users/guilherme/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.4/dd9eeb557650c4ad7394df23f0f5cf27a7cfc697/universal-image-loader-1.9.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
-        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-bcb28ac451eb636f784cbec44e3a91937ea9f3ab.jar" />
     </item>
     <item
         jar="/Users/guilherme/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
@@ -84,13 +84,6 @@
         revision="22.0.1"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
         <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/library-2.4.0-19582a8db9e9f95d8eac3373a5741cdac65b963a.jar" />
-    </item>
-    <item
-        jar="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/exploded-aar/radioSUAndroid/facebookSDK/unspecified/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4d2ab9f2b1333261fec88714dd4bb1ae0f3b20b7">
-        <dex dex="/Users/guilherme/Sistemas/radioSUAndroid/radioSU/build/intermediates/pre-dexed/debug/classes-2e83c5a1028397a2a8c1d51ef2e40f20ac241362.jar" />
     </item>
 
 </items>

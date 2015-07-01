@@ -3,6 +3,7 @@ package com.example.radiosu.web;
 import org.json.JSONObject;
 
 import model.Pedido;
+import model.ReqCurtirMusica;
 import model.ReqLogin;
 import model.ReqMusicas;
 import model.Result;
@@ -32,6 +33,9 @@ public interface WebService {
 
     @POST("/Servico/Pedido/PedidoService.svc/Inserir")
     void pedirMusica(@Body Pedido req, Callback<Result> callback);
+
+    @POST("/Servico/Atividade/AtividadeService.svc/Inserir")
+    void curtirMucisa(@Body ReqCurtirMusica req,Callback<Result> callback);
 
     @POST("/Servico/Usuario/UsuarioService.svc/Inserir")
     void cadastrarUsuario(@Body Usuario req, Callback<Result> callback);

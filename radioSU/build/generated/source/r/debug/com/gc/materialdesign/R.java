@@ -72,7 +72,7 @@ public final class R {
 		public static final int progressBarCircularIndetermininate = 0x7f080071;
 		public static final int red = 0x7f08004d;
 		public static final int rootSelector = 0x7f08004a;
-		public static final int shape_bacground = 0x7f0800a8;
+		public static final int shape_bacground = 0x7f0800a9;
 		public static final int snackbar = 0x7f080072;
 		public static final int text = 0x7f080074;
 		public static final int title = 0x7f080032;
