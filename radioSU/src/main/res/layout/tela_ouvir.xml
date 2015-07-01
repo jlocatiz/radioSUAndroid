@@ -89,11 +89,22 @@
             android:id="@+id/progress_wheel"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/play"
             android:layout_centerVertical="true"
             wheel:matProg_barColor="#ffee1720"
             android:visibility="gone"
             wheel:matProg_progressIndeterminate="true" />
+
+
+        <Button
+            android:id="@+id/button_curtir"
+            android:layout_width="wrap_content"
+            style="@style/ButtonRSU"
+            android:layout_height="wrap_content"
+            android:text="Curtir"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            />
 
 
     </RelativeLayout>

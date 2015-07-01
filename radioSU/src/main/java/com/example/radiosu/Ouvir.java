@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.radiosu.web.WebService;
+import com.facebook.widget.FacebookDialog;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,7 +34,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import model.ReqCurtirMusica;
 import model.Result;
+import model.Usuario;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -45,14 +48,16 @@ public class Ouvir extends Activity {
     Button buttonPlay;
     Button buttonStop;
     Button btnPedir;
+    Button btnCurtir;
     ProgressWheel pb;
     Bitmap bitmap, bitmapBlur;
-
     Thread threadImagem;
     boolean rodando;
     Handler handlerImagem;
     ImageView imagem, imageBack;
     TextView tvMusica, tvArtista;
+    String musicaId,musica;
+
 	String url = "http://stream01.rsu.fm:8080/radiosu.mp3"; 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,7 @@ public class Ouvir extends Activity {
 		setContentView(R.layout.tela_ouvir);
 		pb = (ProgressWheel)findViewById(R.id.progress_wheel);
 		buttonPlay = (Button) findViewById(R.id.play);
+        btnCurtir = (Button) findViewById(R.id.button_curtir);
         imageBack = (ImageView)findViewById(R.id.imageView_background);
         tvMusica = (TextView) findViewById(R.id.textView_musica);
         btnPedir = (Button) findViewById(R.id.button_pedir);
@@ -143,10 +149,16 @@ public class Ouvir extends Activity {
                             @Override
                             public void success(Result result, Response response) {
                                 try {
+                                    btnCurtir.setVisibility(View.VISIBLE);
                                     String[] lista = result.d.split(",");
                                     String url = lista[0];
                                     url = url.substring(16, url.length() - 1);
-                                    String musica = lista[5];
+                                    String aux = lista[4].substring(11,lista[4].length());
+                                    if (!aux.equals(musicaId)) {
+                                        musicaId = lista[4].substring(11, lista[4].length());
+                                        btnCurtir.setText("Curtir");
+                                    }
+                                    musica = lista[5];
                                     musica = musica.substring(10, musica.length() - 1);
                                     tvMusica.setText(musica);
                                     String artista = lista[6];
@@ -220,9 +232,32 @@ public class Ouvir extends Activity {
 				if(mPlayer!=null && mPlayer.isPlaying()){
 					mPlayer.stop();
 				}
+                btnCurtir.setVisibility(View.GONE);
 
 			}
 		});
+
+        btnCurtir.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RestAdapter restAdapter = new RestAdapter.Builder()
+                        .setEndpoint("http://www.radiosertanejo.com.br")
+                        .build();
+
+                WebService service = restAdapter.create(WebService.class);
+                service.curtirMucisa(new ReqCurtirMusica(Integer.parseInt(musicaId), Usuario.current.getId()),new Callback<Result>() {
+                    @Override
+                    public void success(Result result, Response response) {
+                        btnCurtir.setText("Curtiu");
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        error.printStackTrace();
+                    }
+                });
+            }
+        });
 	}
 
 

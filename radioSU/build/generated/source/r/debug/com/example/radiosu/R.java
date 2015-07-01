@@ -1881,7 +1881,7 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f08002a;
         public static final int action_bar_title=0x7f080029;
         public static final int action_context_bar=0x7f08003d;
-        public static final int action_logout=0x7f0800a9;
+        public static final int action_logout=0x7f0800aa;
         public static final int action_menu_divider=0x7f080002;
         public static final int action_menu_presenter=0x7f080003;
         public static final int action_mode_bar=0x7f080039;
@@ -1889,7 +1889,7 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f08002b;
         public static final int activity_chooser_view_content=0x7f08002c;
         public static final int always=0x7f080016;
-        public static final int artistaped=0x7f0800a2;
+        public static final int artistaped=0x7f0800a3;
         public static final int authButton=0x7f080090;
         public static final int beginning=0x7f080013;
         public static final int blue=0x7f08004f;
@@ -1899,7 +1899,8 @@ containing a value of this type.
         public static final int button_accept=0x7f08006f;
         public static final int button_cadastrar=0x7f080088;
         public static final int button_cancel=0x7f08006e;
-        public static final int button_pedir=0x7f0800a1;
+        public static final int button_curtir=0x7f0800a1;
+        public static final int button_pedir=0x7f0800a2;
         public static final int buttonflat=0x7f080073;
         public static final int cadastro=0x7f08008e;
         public static final int center=0x7f080024;
@@ -1944,7 +1945,7 @@ containing a value of this type.
         public static final int editText_email=0x7f08007f;
         public static final int editText_nascimento=0x7f080085;
         public static final int editText_nome=0x7f080077;
-        public static final int editText_recado=0x7f0800a7;
+        public static final int editText_recado=0x7f0800a8;
         public static final int editText_senha=0x7f080081;
         public static final int editText_telefone=0x7f080087;
         public static final int edit_query=0x7f08003e;
@@ -1977,7 +1978,7 @@ containing a value of this type.
         public static final int message=0x7f08006d;
         public static final int message_scrollView=0x7f08006c;
         public static final int middle=0x7f080015;
-        public static final int musicaped=0x7f0800a4;
+        public static final int musicaped=0x7f0800a5;
         public static final int never=0x7f080019;
         public static final int none=0x7f08000e;
         public static final int normal=0x7f08000a;
@@ -1989,7 +1990,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f080006;
         public static final int progress_wheel=0x7f0800a0;
         public static final int radio=0x7f080036;
-        public static final int recadoped=0x7f0800a6;
+        public static final int recadoped=0x7f0800a7;
         public static final int red=0x7f08004d;
         public static final int right=0x7f080026;
         public static final int rootSelector=0x7f08004a;
@@ -2004,7 +2005,7 @@ containing a value of this type.
         public static final int search_src_text=0x7f080045;
         public static final int search_voice_btn=0x7f080049;
         public static final int senha=0x7f08008c;
-        public static final int shape_bacground=0x7f0800a8;
+        public static final int shape_bacground=0x7f0800a9;
         public static final int shortcut=0x7f080035;
         public static final int showCustom=0x7f08000f;
         public static final int showHome=0x7f080010;
@@ -2012,9 +2013,9 @@ containing a value of this type.
         public static final int siteWebView=0x7f080075;
         public static final int small=0x7f080028;
         public static final int snackbar=0x7f080072;
-        public static final int spinner_artistas=0x7f0800a3;
+        public static final int spinner_artistas=0x7f0800a4;
         public static final int spinner_estado=0x7f080079;
-        public static final int spinner_musicas=0x7f0800a5;
+        public static final int spinner_musicas=0x7f0800a6;
         public static final int spinner_sexo=0x7f08007b;
         public static final int split_action_bar=0x7f080007;
         public static final int standard=0x7f080020;
