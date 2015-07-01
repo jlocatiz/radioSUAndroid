@@ -21,7 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.radiosu.web.WebService;
+import com.facebook.Session;
+import com.facebook.SessionState;
 import com.facebook.widget.FacebookDialog;
+import com.facebook.widget.WebDialog;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,10 +47,11 @@ import retrofit.client.Response;
 
 public class Ouvir extends Activity {
 
-	static MediaPlayer mPlayer;
+    static MediaPlayer mPlayer;
     Button buttonPlay;
     Button buttonStop;
     Button btnPedir;
+    Session mSession;
     Button btnCurtir;
     ProgressWheel pb;
     Bitmap bitmap, bitmapBlur;
@@ -56,17 +60,18 @@ public class Ouvir extends Activity {
     Handler handlerImagem;
     ImageView imagem, imageBack;
     TextView tvMusica, tvArtista;
-    String musicaId,musica;
+    String musicaId, musica, imagemUrl;
 
-	String url = "http://stream01.rsu.fm:8080/radiosu.mp3"; 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tela_ouvir);
-		pb = (ProgressWheel)findViewById(R.id.progress_wheel);
-		buttonPlay = (Button) findViewById(R.id.play);
+    String url = "http://stream01.rsu.fm:8080/radiosu.mp3";
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.tela_ouvir);
+        pb = (ProgressWheel) findViewById(R.id.progress_wheel);
+        buttonPlay = (Button) findViewById(R.id.play);
         btnCurtir = (Button) findViewById(R.id.button_curtir);
-        imageBack = (ImageView)findViewById(R.id.imageView_background);
+        imageBack = (ImageView) findViewById(R.id.imageView_background);
         tvMusica = (TextView) findViewById(R.id.textView_musica);
         btnPedir = (Button) findViewById(R.id.button_pedir);
         btnPedir.setOnClickListener(new OnClickListener() {
@@ -76,15 +81,15 @@ public class Ouvir extends Activity {
             }
         });
         tvArtista = (TextView) findViewById(R.id.textView_artista);
-        imagem = (ImageView)findViewById(R.id.imgPlayingMusic);
+        imagem = (ImageView) findViewById(R.id.imgPlayingMusic);
         rodando = false;
-		buttonPlay.setOnClickListener(new OnClickListener() {
+        buttonPlay.setOnClickListener(new OnClickListener() {
 
-			public void onClick(View v) {
+            public void onClick(View v) {
 
                 pb.setVisibility(View.VISIBLE);
                 rodando = true;
-                final Handler handler = new Handler(){
+                final Handler handler = new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         pb.setVisibility(View.GONE);
@@ -129,7 +134,7 @@ public class Ouvir extends Activity {
                 });
                 thread.start();
 
-                final Handler handlerBlur = new Handler(){
+                final Handler handlerBlur = new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
@@ -137,7 +142,7 @@ public class Ouvir extends Activity {
                     }
                 };
 
-                handlerImagem = new Handler(){
+                handlerImagem = new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         RestAdapter restAdapter = new RestAdapter.Builder()
@@ -153,7 +158,8 @@ public class Ouvir extends Activity {
                                     String[] lista = result.d.split(",");
                                     String url = lista[0];
                                     url = url.substring(16, url.length() - 1);
-                                    String aux = lista[4].substring(11,lista[4].length());
+                                    imagemUrl = url;
+                                    String aux = lista[4].substring(11, lista[4].length());
                                     if (!aux.equals(musicaId)) {
                                         musicaId = lista[4].substring(11, lista[4].length());
                                         btnCurtir.setText("Curtir");
@@ -164,7 +170,7 @@ public class Ouvir extends Activity {
                                     String artista = lista[6];
                                     artista = artista.substring(11, artista.length() - 1);
                                     tvArtista.setText(artista);
-                                    ImageLoader.getInstance().loadImage(url, new SimpleImageLoadingListener(){
+                                    ImageLoader.getInstance().loadImage(url, new SimpleImageLoadingListener() {
                                         @Override
                                         public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                                             bitmap = loadedImage;
@@ -173,9 +179,9 @@ public class Ouvir extends Activity {
                                                 @Override
                                                 public void run() {
                                                     try {
-                                                        bitmapBlur = fastblur(bitmap,30);
+                                                        bitmapBlur = fastblur(bitmap, 30);
                                                         handlerBlur.sendEmptyMessage(1);
-                                                    }catch (Exception e){
+                                                    } catch (Exception e) {
                                                     }
 
                                                 }
@@ -201,10 +207,10 @@ public class Ouvir extends Activity {
                 threadImagem = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        while (rodando){
+                        while (rodando) {
                             handlerImagem.sendEmptyMessage(1);
                             try {
-                                Thread.sleep(30*1000);
+                                Thread.sleep(30 * 1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -214,62 +220,93 @@ public class Ouvir extends Activity {
                 threadImagem.start();
 
 
+            }
+        });
 
-			}
-		});
-		
-		buttonStop = (Button) findViewById(R.id.stop);
-		buttonStop.setOnClickListener(new OnClickListener() {
+        buttonStop = (Button) findViewById(R.id.stop);
+        buttonStop.setOnClickListener(new OnClickListener() {
 
-			public void onClick(View v) {
-               pb.setVisibility(View.GONE);
+            public void onClick(View v) {
+                pb.setVisibility(View.GONE);
                 buttonPlay.setVisibility(View.VISIBLE);
                 buttonStop.setVisibility(View.GONE);
                 rodando = false;
                 if (threadImagem != null && threadImagem.isAlive())
                     threadImagem.interrupt();
-				// TODO Auto-generated method stub
-				if(mPlayer!=null && mPlayer.isPlaying()){
-					mPlayer.stop();
-				}
+                // TODO Auto-generated method stub
+                if (mPlayer != null && mPlayer.isPlaying()) {
+                    mPlayer.stop();
+                }
                 btnCurtir.setVisibility(View.GONE);
 
-			}
-		});
+            }
+        });
 
         btnCurtir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                RestAdapter restAdapter = new RestAdapter.Builder()
-                        .setEndpoint("http://www.radiosertanejo.com.br")
-                        .build();
+                if (Usuario.current.getId() > 0) {
+                    RestAdapter restAdapter = new RestAdapter.Builder()
+                            .setEndpoint("http://www.radiosertanejo.com.br")
+                            .build();
 
-                WebService service = restAdapter.create(WebService.class);
-                service.curtirMucisa(new ReqCurtirMusica(Integer.parseInt(musicaId), Usuario.current.getId()),new Callback<Result>() {
-                    @Override
-                    public void success(Result result, Response response) {
-                        btnCurtir.setText("Curtiu");
-                    }
+                    WebService service = restAdapter.create(WebService.class);
+                    service.curtirMucisa(new ReqCurtirMusica(Integer.parseInt(musicaId), Usuario.current.getId()), new Callback<Result>() {
+                        @Override
+                        public void success(Result result, Response response) {
+                            btnCurtir.setText("Curtiu");
+                            Session.openActiveSession(Ouvir.this, true, new com.facebook.Session.StatusCallback() {
+                                @Override
+                                public void call(Session session, SessionState state, Exception exception) {
+                                    if (session.isOpened()) {
+                                        mSession = session;
+                                        share();
+                                    }
+                                }
+                            });
+                        }
 
-                    @Override
-                    public void failure(RetrofitError error) {
-                        error.printStackTrace();
-                    }
-                });
+                        @Override
+                        public void failure(RetrofitError error) {
+                            error.printStackTrace();
+                        }
+                    });
+
+                } else {
+                    btnCurtir.setText("Curtiu");
+                    Session.openActiveSession(Ouvir.this, true, new com.facebook.Session.StatusCallback() {
+                        @Override
+                        public void call(Session session, SessionState state, Exception exception) {
+                            if (session.isOpened()) {
+                                mSession = session;
+                                share();
+                            }
+                        }
+                    });
+                }
             }
         });
-	}
+    }
+
+    private void share() {
+        Bundle bundle = new Bundle();
+        bundle.putString("caption", "Radio Sertanejo");
+        bundle.putString("description", "Eu curti a musica " + musica + " do artista " + tvArtista.getText().toString() + " no aplicativo da Radio SU");
+        bundle.putString("link", "http://www.radiosertanejo.com.br/");
+        bundle.putString("name", "Radio Sertanejo");
+        bundle.putString("picture", url);
+        new WebDialog.FeedDialogBuilder(this, mSession, bundle).build().show();
+    }
 
 
-	
-	protected void onDestroy() {
-		super.onDestroy();
-		// TODO Auto-generated method stub
-		if (mPlayer != null) {
-			mPlayer.release();
-			mPlayer = null;
-		}
-	}
+    protected void onDestroy() {
+        super.onDestroy();
+        // TODO Auto-generated method stub
+        if (mPlayer != null) {
+            mPlayer.release();
+            mPlayer = null;
+        }
+    }
 
     public static Bitmap fastblur(Bitmap sentBitmap, int radius) {
 
@@ -452,7 +489,7 @@ public class Ouvir extends Activity {
             stackpointer = radius;
             for (y = 0; y < h; y++) {
                 // Preserve alpha channel: ( 0xff000000 & pix[yi] )
-                pix[yi] = ( 0xff000000 & pix[yi] ) | ( dv[rsum] << 16 ) | ( dv[gsum] << 8 ) | dv[bsum];
+                pix[yi] = (0xff000000 & pix[yi]) | (dv[rsum] << 16) | (dv[gsum] << 8) | dv[bsum];
 
                 rsum -= routsum;
                 gsum -= goutsum;
@@ -504,5 +541,15 @@ public class Ouvir extends Activity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            default:
+                if (Session.getActiveSession() != null) //I need to check if this null just to sleep peacefully at night
+                    Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+                break;
+        }
+    }
 
 }
